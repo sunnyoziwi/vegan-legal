@@ -14,8 +14,10 @@
    "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1632_vegan-spiced-rhubarb-and-ginger-chutney_en/03.jpg",
    "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1632_vegan-spiced-rhubarb-and-ginger-chutney_en/04.jpg"
   ],
-  "status": "queued",
-  "attempts": 0
+  "status": "sent",
+  "attempts": 1,
+  "result": "inbox (vào hộp nháp TikTok)",
+  "sentAt": "2026-10-28T09:33:42.699Z"
  },
  {
   "folder": "2026-10-28_1632_vegan-spiced-rhubarb-and-ginger-chutney_vi",
