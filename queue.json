@@ -108,5 +108,37 @@
   ],
   "status": "queued",
   "attempts": 0
+ },
+ {
+  "folder": "2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_en",
+  "lang": "en",
+  "runId": "1",
+  "order": 0,
+  "status": "pending",
+  "title": "Did you know over ninety percent of Britain's slaughterhouses have vanished since the seve",
+  "captionText": "🇬🇧 UK: A new report reveals that over 90 percent of British abattoirs have closed since the 1970s, pushing the meat industry toward larger industrial megafarms and corporate control.\n\n#vegan #plantbased #animalrights #factoryfarming #uknews\n\nSource: plantbasednews.org – https://plantbasednews.org/animals/uk-abattoirs-disappeared-bad-for-animals/",
+  "photos": [
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_en/01.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_en/02.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_en/03.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_en/04.jpg"
+  ],
+  "attempts": 0
+ },
+ {
+  "folder": "2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_vi",
+  "lang": "vi",
+  "runId": "1",
+  "order": 0,
+  "status": "pending",
+  "title": "Bạn có biết hơn 90 phần trăm các lò mổ ở Anh đã biến mất kể từ những năm 70?",
+  "captionText": "🇬🇧 Anh: Một báo cáo mới cho biết hơn 90 phần trăm lò mổ ở Anh đã đóng cửa từ những năm 70, đẩy ngành công nghiệp thịt tiến sâu hơn vào các trang trại khổng lồ.\n\n#anchay #thuanthucvat #baovedongvat #anlanchay #GocAnChay\n\nNguồn: plantbasednews.org – https://plantbasednews.org/animals/uk-abattoirs-disappeared-bad-for-animals/",
+  "photos": [
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_vi/01.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_vi/02.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_vi/03.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1709_over-90-of-britain-s-abattoirs-have-disappeared-si_vi/04.jpg"
+  ],
+  "attempts": 0
  }
 ]
