@@ -1,0 +1,43 @@
+name: Publish due TikTok posts
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # mỗi 15 phút (GitHub có thể chạy trễ vài phút)
+  workflow_dispatch:          # nút "Run workflow" để chạy tay
+
+permissions:
+  contents: write             # để cập nhật trạng thái trong queue.json
+
+concurrency:
+  group: publish-due
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Gửi bài đến giờ lên TikTok
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_POST_MODE: ${{ vars.TIKTOK_POST_MODE || 'inbox' }}
+          TIKTOK_PRIVACY: ${{ vars.TIKTOK_PRIVACY || 'SELF_ONLY' }}
+        run: node scripts/publish-due.mjs
+
+      - name: Lưu trạng thái queue.json
+        run: |
+          git diff --quiet -- queue.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add queue.json
+          git commit -m "TikTok queue: cập nhật trạng thái"
+          git pull --rebase
+          git push
