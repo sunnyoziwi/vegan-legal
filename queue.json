@@ -36,5 +36,41 @@
   ],
   "status": "queued",
   "attempts": 0
+ },
+ {
+  "folder": "2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en",
+  "lang": "en",
+  "runId": "1",
+  "day": "2026-10-29",
+  "due": 1793275200000,
+  "dueLocal": "2026-10-29 08:00 EDT",
+  "title": "High-fashion runways just took a massive cruelty-free step forward in Paris.",
+  "captionText": "🇫🇷 France: Vivienne Westwood showcased innovative vegan feathers called FEVVERS during Paris Fashion Week to create a completely feather-free luxury collection.\n\n#veganfashion #crueltyfree #parisfashionweek #viviennewestwood #plantbased\n\nSource: plantbasednews.org – https://plantbasednews.org/lifestyle/fashion/vivienne-westwood-vegan-feathers-fashion-week/",
+  "photos": [
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en/01.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en/02.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en/03.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en/04.jpg"
+  ],
+  "status": "queued",
+  "attempts": 0
+ },
+ {
+  "folder": "2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi",
+  "lang": "vi",
+  "runId": "1",
+  "day": "2026-10-30",
+  "due": 1793329200000,
+  "dueLocal": "2026-10-30 10:00 GMT+7",
+  "title": "Sàn diễn thời trang cao cấp vừa có một bước tiến lớn không dùng động vật tại Paris.",
+  "captionText": "🇫🇷 Pháp: Thương hiệu Vivienne Westwood vừa ra mắt chất liệu lông vũ thuần chay mang tên FEVVERS tại Tuần lễ Thời trang Paris cho bộ sưu tập sang trọng hoàn toàn không dùng lông động vật.\n\n#thoitrangthunchay #khongthuandongvat #thoitrangbenvung #baovedongvat #phap\n\nNguồn: plantbasednews.org – https://plantbasednews.org/lifestyle/fashion/vivienne-westwood-vegan-feathers-fashion-week/",
+  "photos": [
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi/01.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi/02.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi/03.jpg",
+   "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi/04.jpg"
+  ],
+  "status": "queued",
+  "attempts": 0
  }
 ]
