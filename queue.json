@@ -54,8 +54,10 @@
    "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en/03.jpg",
    "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_en/04.jpg"
   ],
-  "status": "queued",
-  "attempts": 0
+  "status": "sent",
+  "attempts": 1,
+  "result": "inbox (vào hộp nháp TikTok)",
+  "sentAt": "2026-10-29T05:06:34.818Z"
  },
  {
   "folder": "2026-10-28_1654_53-orangutans-rescued-from-fires-in-borneo-with-ma_en",
@@ -90,8 +92,10 @@
    "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi/03.jpg",
    "https://sunnyoziwi.github.io/vegan-legal/p/2026-10-28_1653_vivienne-westwood-showcases-vegan-feathers-at-pari_vi/04.jpg"
   ],
-  "status": "queued",
-  "attempts": 0
+  "status": "sent",
+  "attempts": 1,
+  "result": "inbox (vào hộp nháp TikTok)",
+  "sentAt": "2026-10-29T05:06:39.652Z"
  },
  {
   "folder": "2026-10-28_1654_53-orangutans-rescued-from-fires-in-borneo-with-ma_vi",
