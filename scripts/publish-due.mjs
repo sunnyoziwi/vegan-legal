@@ -1,6 +1,8 @@
 // Gửi lên TikTok các bài trong queue.json đã đến giờ (GitHub Actions gọi mỗi 15 phút).
 // queue.json do workflow n8n "Vegan & Animal rights → TikTok" ghi; ảnh nằm ở https://sunnyoziwi.github.io/vegan-legal/p/…
 // Mỗi ngôn ngữ tối đa 1 bài / lần chạy; lỗi thì thử lại sau 30 phút, tối đa 3 lần.
+// Hộp nháp TikTok đầy (spam_risk_too_many_pending_share, ~5 bài chờ / 24 giờ) → thử lại mỗi 3 giờ, tối đa 5 ngày.
+// Bài gửi bù (retry: true, do flow n8n xếp vào khi gửi ngay bị lỗi) → lỗi khác thì thử lại mỗi 3 giờ, tối đa 4 lần.
 // Env: TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN, TIKTOK_POST_MODE (inbox|direct), TIKTOK_PRIVACY.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
@@ -8,6 +10,9 @@ const { TIKTOK_CLIENT_KEY: CK, TIKTOK_CLIENT_SECRET: CS, TIKTOK_REFRESH_TOKEN: R
 const MODE = (process.env.TIKTOK_POST_MODE || 'inbox').toLowerCase() === 'direct' ? 'DIRECT_POST' : 'MEDIA_UPLOAD';
 const PRIVACY = process.env.TIKTOK_PRIVACY || 'SELF_ONLY';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const HOUR = 3600000;
+const INBOX_FULL = /spam_risk|too_many_pending|pending_share/i;
+const vnTime = (ms) => new Date(ms + 7 * HOUR).toISOString().slice(0, 16).replace('T', ' ') + ' giờ VN';
 
 if (!CK || !CS || !RT) {
   console.log('Thiếu TIKTOK_CLIENT_KEY / TIKTOK_CLIENT_SECRET / TIKTOK_REFRESH_TOKEN trong Secrets → bỏ qua.');
@@ -51,10 +56,17 @@ for (const q of due) {
     st = st === 'SEND_TO_USER_INBOX' ? 'inbox (vào hộp nháp TikTok)' : st === 'PUBLISH_COMPLETE' ? 'published' : st;
   }
   q.attempts = (q.attempts || 0) + 1;
+  q.queuedAt = q.queuedAt || q.due || now; // mốc tính 5 ngày, không đổi khi dời giờ thử lại
   q.result = st;
   q.sentAt = new Date().toISOString();
-  q.status = /^error/.test(st) ? (q.attempts >= 3 ? 'failed' : 'queued') : 'sent';
-  if (q.status === 'queued') q.due = now + 30 * 60000;
+  if (!/^error/.test(st)) q.status = 'sent';
+  else if (INBOX_FULL.test(st) && now - q.queuedAt < 5 * 24 * HOUR) {
+    q.status = 'queued'; q.due = now + 3 * HOUR;
+  } else if (q.attempts < (q.retry ? 4 : 3)) {
+    q.status = 'queued'; q.due = now + (q.retry ? 3 * HOUR : 30 * 60000);
+  } else q.status = 'failed';
+  if (q.status === 'queued') q.dueLocal = vnTime(q.due) + ' (thử lại)';
   console.log(q.folder, '→', st);
 }
-writeFileSync('queue.json', JSON.stringify(queue, null, 1));
+const keep = queue.filter((q) => q.status === 'queued' || q.status === 'pending' || now - (q.due || 0) < 14 * 24 * HOUR);
+writeFileSync('queue.json', JSON.stringify(keep, null, 1));
